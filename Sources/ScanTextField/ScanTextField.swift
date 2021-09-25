@@ -1,9 +1,11 @@
 import SwiftUI
 
 public struct ScanTextField: UIViewRepresentable {
+    public let placeholder: String
     @Binding public var text: String
     
-    public init(text: Binding<String>) {
+    public init(_ placeholder: String, text: Binding<String>) {
+        self.placeholder = placeholder
         self._text = text
     }
     
@@ -17,7 +19,7 @@ public struct ScanTextField: UIViewRepresentable {
         bar.items = [toolbarItem]
         bar.sizeToFit()
         textfield.inputAccessoryView = bar
-        textfield.placeholder = "Enter name"
+        textfield.placeholder = placeholder
         textfield.delegate = context.coordinator
         textfield.text = text
         
