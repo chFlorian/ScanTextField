@@ -1,7 +1,7 @@
 import SwiftUI
 
 public struct ScanTextField: UIViewRepresentable {
-    @Binding var text: String
+    @Binding public var text: String
     
     public func makeUIView(context: Context) -> some UIView {
         let textFromCamera = UIAction.captureTextFromCamera(responder: context.coordinator, identifier: nil)
