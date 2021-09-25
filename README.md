@@ -24,7 +24,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            ScanTextField(text: $text)
+            ScanTextField("Enter name", text: $text)
                 .padding(8)
                 .frame(height: 30)
                 .background(Color(.lightGray).opacity(0.2))
