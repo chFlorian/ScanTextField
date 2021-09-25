@@ -3,7 +3,7 @@ import SwiftUI
 public struct ScanTextField: UIViewRepresentable {
     @Binding public var text: String
     
-    public init(_ text: Binding<String>) {
+    public init(text: Binding<String>) {
         self._text = text
     }
     
