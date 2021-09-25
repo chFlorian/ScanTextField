@@ -27,8 +27,8 @@ public struct ScanTextField: UIViewRepresentable {
     }
     
     public func updateUIView(_ uiView: UIViewType, context: Context) {
-        if uiView is  UITextField {
-            (uiView as! UITextField).text = text
+        if let uiView = uiView as? UITextField {
+            uiView.text = text
         }
     }
     
@@ -37,11 +37,11 @@ public struct ScanTextField: UIViewRepresentable {
     }
     
     public class Coordinator: UIResponder, UIKeyInput, UITextFieldDelegate {
+        public let parent: ScanTextField
+        
         public var hasText: Bool {
             !parent.text.isEmpty
         }
-        
-        public let parent: ScanTextField
         
         public init(_ parent: ScanTextField) {
             self.parent = parent
