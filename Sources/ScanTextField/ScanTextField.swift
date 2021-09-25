@@ -3,6 +3,10 @@ import SwiftUI
 public struct ScanTextField: UIViewRepresentable {
     @Binding public var text: String
     
+    public init(_ text: Binding<String>) {
+        self._text = text
+    }
+    
     public func makeUIView(context: Context) -> some UIView {
         let textFromCamera = UIAction.captureTextFromCamera(responder: context.coordinator, identifier: nil)
         let image = UIImage(systemName: "text.viewfinder")
